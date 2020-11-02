@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
 }
+    // MARK: - Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
@@ -26,15 +28,12 @@ class ViewController: UIViewController {
 //        }
         view.backgroundColor = isLightOn ? .white : .black
     }
-    
-    @IBAction func buttonPressed() {
-        isLightOn.toggle()
-        updateUI()
-   
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        
-        //        print(#line, #function, isLightOn)
+            isLightOn.toggle()
+            updateUI()
     }
-    
-}
+
+//        print(#line, #function, isLightOn)
+    }
 
